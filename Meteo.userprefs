@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{A38EA45B-D1F2-4C5A-99E8-65C803270852}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Meteo/MeteoPage.xaml.cs">
+    <Files>
+      <File FileName="Meteo/PrevisionPage.xaml" Line="43" Column="39" />
+      <File FileName="Meteo/PrevisionPage.xaml.cs" Line="45" Column="134" />
+      <File FileName="Meteo/MeteoPage.xaml" Line="15" Column="61" />
+      <File FileName="Meteo/MeteoPage.xaml.cs" Line="48" Column="119" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Meteo.Droid PreferredExecutionTarget="Android.SH34TW901741" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

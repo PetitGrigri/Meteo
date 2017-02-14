@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:Meteo" x:Class="Meteo.MeteoPage"
+		Title="Météo d'une ville">
+
+
+  	<StackLayout Padding="10">
+		<Frame x:Name="frameFormulaire" IsVisible="true">
+			<StackLayout>
+				<Entry Placeholder="Choisissez une vile" HorizontalOptions="Fill" x:Name="nom" />
+				<Button Text="Valider" TextColor="White"  BackgroundColor="#249ff4" HorizontalOptions="Fill" Clicked="getMeteoVille" />
+			</StackLayout>
+		</Frame>
+		
+		<Label Text="Chargement en cours..." TextColor="#249ff4"   
+			VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+			VerticalOptions = "FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false" x:Name="loadingLabel"/>
+		
+		<Frame x:Name="frameVille"  IsVisible="false">
+			<StackLayout HorizontalOptions="FillAndExpand">
+				<Grid >
+				    <Grid.ColumnDefinitions>
+				    	<ColumnDefinition Width="8*" />
+						<ColumnDefinition Width="2*" />
+				    </Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+
+					<Label Grid.Row="0" Grid.Column="0" Text="Ville" TextColor="Black" 
+						 HorizontalOptions="StartAndExpand" x:Name="villeLabel" FontSize="50" />
+					<Image Grid.Row="0" Grid.Column="1" x:Name="imageWeather" HorizontalOptions="FillAndExpand" />
+
+				</Grid>
+
+				<Grid >
+				    <Grid.ColumnDefinitions>
+				    	<ColumnDefinition Width="5*" />
+						<ColumnDefinition Width="5*" />
+				    </Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+
+					<Label Grid.Row="0" Grid.Column="0" Text="-" TextColor="Gray" 
+						HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" x:Name="temperatureLabel" FontSize="30"/>
+					<Label Grid.Row="0" Grid.Column="1" Text="-" TextColor="Gray" 
+						HorizontalOptions="EndAndExpand"  HorizontalTextAlignment="Center" x:Name="humidityLabel" FontSize="30" />
+				
+				</Grid>
+				
+				<Grid  Margin="20,2,20,2">
+				    <Grid.ColumnDefinitions>
+				    	<ColumnDefinition Width="5*" />
+						<ColumnDefinition Width="5*" />
+				    </Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+						<RowDefinition Height="*" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+
+					<Label Grid.Row="0" Grid.Column="0" Text="Description : " TextColor="Black" />
+					<Label Grid.Row="0" Grid.Column="1" Text="-" TextColor="Gray" x:Name="descriptionWeather"/>
+
+					<Label Grid.Row="1" Grid.Column="0" Text="Vitesse du vent : " TextColor="Black" />
+					<Label Grid.Row="1" Grid.Column="1" Text="-" TextColor="Gray" x:Name="windSpeedLabel"/>
+
+					<Label Grid.Row="2" Grid.Column="0" Text="Sens du vent : " TextColor="Black" />
+					<Label Grid.Row="2" Grid.Column="1"  Text="-" TextColor="Gray" x:Name="windDirection"/>
+				</Grid>
+
+
+			</StackLayout>
+		</Frame>
+		
+	</StackLayout>
+
+
+
+</ContentPage>

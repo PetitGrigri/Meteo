@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Meteo.HistoriquePage"
+		Title="Prévision d'une Ville">
+	<ContentPage.Content>
+
+		<StackLayout Padding="10">
+			<Label Text="Choisissez une ville" FontAttributes="Bold" FontSize = "18" />
+
+			<Frame x:Name="frameHistoriqueFormulaire" IsVisible="true">
+				<StackLayout>
+					<Entry Placeholder="Choisissez une vile" HorizontalOptions="Fill" x:Name="nom" />
+					<Button Text="Valider" TextColor="White"  BackgroundColor="Gray" HorizontalOptions="Fill" Clicked="getHistoriqueMeteoVille" />
+				</StackLayout>
+			</Frame>
+
+			<Label Text="Chargement en cours..." TextColor="Silver"  
+				VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+				VerticalOptions = "FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="false" x:Name="loadingHistoriqueLabel"/>
+
+
+			<ListView ItemsSource="{Binding}"  IsVisible="false" x:Name="listePrevision">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+
+
+							<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+								<Image Source="{Binding iconUri}" HorizontalOptions="StartAndExpand" />
+								<Label Text="{Binding temp}" HorizontalOptions="CenterAndExpand" TextColor="Gray" />
+								<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+									<Label Text="{Binding description}" HorizontalTextAlignment="Center" TextColor="Gray" />
+									<Label Text="{Binding dt_txt, StringFormat='{0:MM/dd/yy H:mm}'}" HorizontalTextAlignment="Center" TextColor="Gray" />
+								</StackLayout>
+							</StackLayout>
+
+	                    </ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+
+	</ContentPage.Content>
+</ContentPage>
